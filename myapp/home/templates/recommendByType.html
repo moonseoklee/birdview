@@ -1,0 +1,66 @@
+<!--<html>
+  <h1>hello</h1>
+    <ul>
+        {%for i in item%}
+        <li>
+            <div>{{i.name}}</div>
+
+        </li>
+            
+
+        {%endfor%}
+
+
+    </ul>
+    
+</html>
+!--->
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="./css/reco.css" rel="stylesheet" sype="reco">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<head>   
+    <style type = "text/css">
+       
+        td.a{       
+            width:1px;       
+            text-overflow:ellipsis;
+            overflow:hidden;
+            white-space:nowrap;
+        }
+    </style>
+      
+      
+</head>
+<div class="container">
+	<div class="row">        
+		<div class="col-md-9">
+    	 <table class="table table-list-search">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>ImageUrl</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Ingredients</th>
+                            <th>MonthlySales</th>
+                        </tr>
+                    </thead>
+                    {%for i in item%}
+                    <tbody>         
+                        <tr>
+                            <td>{{i.id}}</td>
+                            <td class="a">https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/image/{{i.imageId}}.jpg</td id>
+                            <td>{{i.name}}</td>
+                            <td>{{i.price}}</td>
+                            <td>{{i.ingredients}}</td>
+                            <td>{{i.monthlySales}}</td>
+                            
+                        </tr>                       
+                    </tbody>
+                    {%endfor%}
+                </table>   
+		</div>
+	</div>
+</div>

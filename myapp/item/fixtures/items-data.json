@@ -1,0 +1,13 @@
+[
+    {
+        "model": "item.item",
+        "fields": {
+            "name":"foundation","oily":"","dry":"","sensitive":"O"
+        }
+    }, {
+        "model": "item.item",
+        "fields": {
+            "name":"foundation","oily":"","dry":"","sensitive":"O"
+        }
+    }
+]

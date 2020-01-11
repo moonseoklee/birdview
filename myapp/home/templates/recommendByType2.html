@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V04</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+									
+						
+				
+				<div class="table100 ver2 m-b-110">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column2">Id</th>
+									<th class="cell100 column1">ImageUrl</th>
+									<th class="cell100 column3">Name</th>
+									<th class="cell100 column5">Price</th>
+									<th class="cell100 column5">Ingredients</th>
+									<th class="cell100 column5">MonthlySales</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table style="TABLE-LAYOUT:fixed;">
+							<tbody>
+								{%for i in item%}
+								<tr class="row100 body">
+									<td class="cell100 column2">{{i.id}}</td>
+									<td class="cell100 column1" onClick="window.open('https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/image/{{i.imageId}}.jpg')" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;cursor:pointer;">https://grepp-programmers-challenges.s3.ap-northeast-2.amazonaws.com/2020-birdview/image/{{i.imageId}}.jpg</td>
+									<td class="cell100 column3">{{i.name}}</td>
+									<td class="cell100 column5">{{i.price}}</td>
+									<td class="cell100 column5" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;">{{i.ingredients}}</td>
+									<td class="cell100 column5" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.monthlySales}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table style="table-layout:fixed;>
+					</div>
+				</div>
+
+			
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+			
+		
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	
+</body>
+</html>
