@@ -56,8 +56,9 @@ def categoryFunc(categoryd,querySet):
 def includeFunc(includeStr,querySet):
     includeList = list(includeStr.split(','))
     for i in includeList:
+        
         querySet = querySet.filter(ingredients__contains=i)
-
+           
     return querySet
 def excludeFunc(excludeStr,querySet):
     excludeList = list(excludeStr.split(','))
@@ -111,7 +112,7 @@ def makeJson3(i):
     temp['price'] =i['price']
    
     jsonList.append(temp)
-    print(jsonList)
+    
     return jsonList
 
 def main(request):
@@ -138,7 +139,7 @@ def main(request):
 
 
 
-
+    
 
     ##########paging###############
     page = request.GET.get('page')
@@ -174,7 +175,7 @@ def detail(request,id):
     querySet = makeJson2((querySet))
     ###########recommendByCategory##############
     
-    if skinType!=None:
+    if skinType=='oily' or skinType=='sensitive' or skinType=='dry':
         queryAll = models.Item.objects.all()    
         
         queryAll = queryAll.filter(category__contains=category)

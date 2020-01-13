@@ -22,6 +22,6 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'', views.index),
-    path('products/<int:id>/',views.detail),
+    path('product/<int:id>/',views.detail),
     url(r'^products/$',views.main)
 ]
